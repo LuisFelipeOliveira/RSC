@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#include <string.h>>
+#include <string.h>
 
-//Método do scanf: scanf("%tipo", &variável)
+//MÃ©todo do scanf: scanf("%tipo", &variÃ¡vel)
 
 
-//Variáveis necessárias para o funcionamento do código:
+//VariÃ¡veis necessÃ¡rias para o funcionamento do cÃ³digo:
 char *nickname[20];
 char *log_cut_type[30];
 char *type_normal[6];
@@ -14,7 +14,7 @@ char *type_oak[8];
 char *type_willow[9];
 char *type_teak[4];
 char *type_maple[5];
-char *type_mahogany[8]; //OBS.: Para facilitar o reaproveitamento do código, o nº de caracteres será o maior (entre pt e en).
+char *type_mahogany[8]; //OBS.: Para facilitar o reaproveitamento do cÃ³digo, o nÂº de caracteres serÃ¡ o maior (entre pt e en).
 char *type_arctic_pine[16];
 char *type_eucalyptus[10];
 char *type_yew[5];
@@ -50,7 +50,7 @@ int ret17;
 
 
 
-//Protótipo de funções:
+//ProtÃ³tipo de funÃ§Ãµes:
 void program_title();
 void sys_lang();//50% - Serve pra acentuar em pt_BR, nesse caso!
 void receive_nickname(); //OK
@@ -71,7 +71,7 @@ int main()
 }
 
 
-//Funções:
+//FunÃ§Ãµes:
 void program_title(){
     system ("title RuneScape Calculator");
 }
@@ -90,7 +90,7 @@ void receive_nickname(){
 
 
 void receive_ability_name(){
-    printf("Qual a habilidade que você deseja carregar? \n");
+    printf("Qual a habilidade que vocÃª deseja carregar? \n");
     printf("No momento, dispomos de: \n");
     printf("[1]\t-\t Corte de Lenha\n");
     printf("[2]\t-\t Arte do Fogo\n");
@@ -100,13 +100,13 @@ void receive_ability_name(){
     switch(ability){
         case 1:
             system("cls");
-            printf("Carregando código para Corte de Lenha... \n");
+            printf("Carregando cÃ³digo para Corte de Lenha... \n");
             receive_ability_level();
             break;
 
         case 2:
             system("cls");
-            printf("Carregando código para Arte do Fogo... \n");
+            printf("Carregando cÃ³digo para Arte do Fogo... \n");
             receive_ability_level();
             break;
     }
@@ -114,7 +114,7 @@ void receive_ability_name(){
 
 
 void receive_ability_level(){
-    printf("Então, %s, qual o seu nível nessa habilidade?\n", nickname);
+    printf("EntÃ£o, %s, qual o seu nÃ­vel nessa habilidade?\n", nickname);
     printf("-> ");
     scanf("%i", &ability_level);
     check_level();
@@ -124,7 +124,7 @@ void receive_ability_level(){
 
 void check_level(){
     if (ability_level < 1 || ability_level > 120){
-        printf("O nível da habilidade deve ser entre 1 e 120.");
+        printf("O nÃ­vel da habilidade deve ser entre 1 e 120.");
     }
     else{
         if (ability == 1){
@@ -141,13 +141,13 @@ void check_level(){
 }
 
 void check_quantity_of_exp(){
-    printf("Qual quantidade de experiência necessária para atingir seu objetivo? \n");
+    printf("Qual quantidade de experiÃªncia necessÃ¡ria para atingir seu objetivo? \n");
     printf("-> ");
     scanf("%f", &xp_qnt);
 }
 
 void ability_wc(){
-    printf("Qual o tipo de árvore que você deseja cortar? \n");
+    printf("Qual o tipo de Ã¡rvore que vocÃª deseja cortar? \n");
     printf("-> ");
     scanf("%s", &log_cut_type);
     strcpy(type_normal, "normal");
@@ -162,7 +162,7 @@ void ability_wc(){
     strcpy(type_ivy, "hera");
     strcpy(type_magic, "magica");
     strcpy(type_blisterwood, "inflamadeira");
-    strcpy(type_cursed_magic, "magica amaldiçoada");
+    strcpy(type_cursed_magic, "magica amaldiÃ§oada");
     strcpy(type_mutated_vine, "vinha mutante");
     strcpy(type_curly_straight_root, "raiz curva");
     strcpy(type_ancient, "ancia");
@@ -187,7 +187,7 @@ void ability_wc(){
 
     if (ret1 == 0){
         if (ability_level >= 1){
-                printf("Você receberá ao menos 25xp por lenha. \n");
+                printf("VocÃª receberÃ¡ ao menos 25xp por lenha. \n");
                 int xp_normal = 25;
                 int price_for_sell = 94;
                 int qtd_logs_needed = xp_qnt / xp_normal;
@@ -202,18 +202,18 @@ void ability_wc(){
                     total_profit = 0;
                 }
 
-                printf("%s, você precisará cortar aproximadamente %i árvore(s). \n", nickname, qtd_logs_needed);
+                printf("%s, vocÃª precisarÃ¡ cortar aproximadamente %i Ã¡rvore(s). \n", nickname, qtd_logs_needed);
                 printf("Lucro total: %i moeda(s). \n", total_profit);
         }
         else{
-            printf("Você não possui o nível necessário para cortar este tipo de lenha.");
+            printf("VocÃª nÃ£o possui o nÃ­vel necessÃ¡rio para cortar este tipo de lenha.");
         }
 
 
     }
     else if (ret2 == 0){
         if (ability_level >= 15){
-                printf("Você receberá ao menos 37.5xp por lenha. \n");
+                printf("VocÃª receberÃ¡ ao menos 37.5xp por lenha. \n");
                 int xp_oak = 37.5;
                 int price_for_sell = 76;
                 int qtd_logs_needed = xp_qnt / xp_oak;
@@ -228,17 +228,17 @@ void ability_wc(){
                     total_profit = 0;
                 }
 
-                printf("%s, você precisará cortar aproximadamente %i árvore(s). \n", nickname, qtd_logs_needed);
+                printf("%s, vocÃª precisarÃ¡ cortar aproximadamente %i Ã¡rvore(s). \n", nickname, qtd_logs_needed);
                 printf("Lucro total: %i moeda(s). \n", total_profit);
         }
         else{
-            printf("Você não possui o nível necessário para cortar este tipo de lenha.");
+            printf("VocÃª nÃ£o possui o nÃ­vel necessÃ¡rio para cortar este tipo de lenha.");
         }
 
     }
     else if (ret3 == 0){
         if (ability_level >= 30){
-                printf("Você receberá ao menos 67.5xp por lenha. \n");
+                printf("VocÃª receberÃ¡ ao menos 67.5xp por lenha. \n");
                 int xp_willow = 67.5;
                 int price_for_sell = 22;
                 int qtd_logs_needed = xp_qnt / xp_willow;
@@ -253,17 +253,17 @@ void ability_wc(){
                     total_profit = 0;
                 }
 
-                printf("%s, você precisará cortar aproximadamente %i árvore(s). \n", nickname, qtd_logs_needed);
+                printf("%s, vocÃª precisarÃ¡ cortar aproximadamente %i Ã¡rvore(s). \n", nickname, qtd_logs_needed);
                 printf("Lucro total: %i moeda(s). \n", total_profit);
         }
         else{
-            printf("Você não possui o nível necessário para cortar este tipo de lenha.");
+            printf("VocÃª nÃ£o possui o nÃ­vel necessÃ¡rio para cortar este tipo de lenha.");
         }
 
     }
     else if (ret4 == 0){
         if (ability_level >= 35){
-                printf("Você receberá ao menos 85xp por lenha. \n");
+                printf("VocÃª receberÃ¡ ao menos 85xp por lenha. \n");
                 int xp_teak = 85;
                 int price_for_sell = 98;
                 int qtd_logs_needed = xp_qnt / xp_teak;
@@ -278,17 +278,17 @@ void ability_wc(){
                     total_profit = 0;
                 }
 
-                printf("%s, você precisará cortar aproximadamente %i árvore(s). \n", nickname, qtd_logs_needed);
+                printf("%s, vocÃª precisarÃ¡ cortar aproximadamente %i Ã¡rvore(s). \n", nickname, qtd_logs_needed);
                 printf("Lucro total: %i moeda(s). \n", total_profit);
         }
         else{
-            printf("Você não possui o nível necessário para cortar este tipo de lenha.");
+            printf("VocÃª nÃ£o possui o nÃ­vel necessÃ¡rio para cortar este tipo de lenha.");
         }
 
     }
     else if (ret5 == 0){
         if (ability_level >= 45){
-                printf("Você receberá ao menos 100xp por lenha. \n");
+                printf("VocÃª receberÃ¡ ao menos 100xp por lenha. \n");
                 int xp_maple = 100;
                 int price_for_sell = 25;
                 int qtd_logs_needed = xp_qnt / xp_maple;
@@ -303,17 +303,17 @@ void ability_wc(){
                     total_profit = 0;
                 }
 
-                printf("%s, você precisará cortar aproximadamente %i árvore(s). \n", nickname, qtd_logs_needed);
+                printf("%s, vocÃª precisarÃ¡ cortar aproximadamente %i Ã¡rvore(s). \n", nickname, qtd_logs_needed);
                 printf("Lucro total: %i moeda(s). \n", total_profit);
         }
         else{
-            printf("Você não possui o nível necessário para cortar este tipo de lenha.");
+            printf("VocÃª nÃ£o possui o nÃ­vel necessÃ¡rio para cortar este tipo de lenha.");
         }
 
     }
     else if (ret6 == 0){
         if (ability_level >= 50){
-                printf("Você receberá ao menos 125xp por lenha. \n");
+                printf("VocÃª receberÃ¡ ao menos 125xp por lenha. \n");
                 int xp_mahogany = 125;
                 int price_for_sell = 489;
                 int qtd_logs_needed = xp_qnt / xp_mahogany;
@@ -328,17 +328,17 @@ void ability_wc(){
                     total_profit = 0;
                 }
 
-                printf("%s, você precisará cortar aproximadamente %i árvore(s). \n", nickname, qtd_logs_needed);
+                printf("%s, vocÃª precisarÃ¡ cortar aproximadamente %i Ã¡rvore(s). \n", nickname, qtd_logs_needed);
                 printf("Lucro total: %i moeda(s). \n", total_profit);
         }
         else{
-            printf("Você não possui o nível necessário para cortar este tipo de lenha.");
+            printf("VocÃª nÃ£o possui o nÃ­vel necessÃ¡rio para cortar este tipo de lenha.");
         }
 
     }
     else if (ret7 == 0){
         if (ability_level >= 54){
-                printf("Você receberá ao menos 140.2xp por lenha. \n");
+                printf("VocÃª receberÃ¡ ao menos 140.2xp por lenha. \n");
                 int xp_arctic_pine = 140.2;
                 int price_for_sell = 71;
                 int qtd_logs_needed = xp_qnt / xp_arctic_pine;
@@ -353,17 +353,17 @@ void ability_wc(){
                     total_profit = 0;
                 }
 
-                printf("%s, você precisará cortar aproximadamente %i árvore(s). \n", nickname, qtd_logs_needed);
+                printf("%s, vocÃª precisarÃ¡ cortar aproximadamente %i Ã¡rvore(s). \n", nickname, qtd_logs_needed);
                 printf("Lucro total: %i moeda(s). \n", total_profit);
         }
         else{
-            printf("Você não possui o nível necessário para cortar este tipo de lenha.");
+            printf("VocÃª nÃ£o possui o nÃ­vel necessÃ¡rio para cortar este tipo de lenha.");
         }
 
     }
     else if (ret8 == 0){
         if (ability_level >= 58){
-                printf("Você receberá ao menos 165xp por lenha. \n");
+                printf("VocÃª receberÃ¡ ao menos 165xp por lenha. \n");
                 int xp_eucalyptus = 165;
                 int price_for_sell = 460;
                 int qtd_logs_needed = xp_qnt / xp_eucalyptus;
@@ -378,17 +378,17 @@ void ability_wc(){
                     total_profit = 0;
                 }
 
-                printf("%s, você precisará cortar aproximadamente %i árvore(s). \n", nickname, qtd_logs_needed);
+                printf("%s, vocÃª precisarÃ¡ cortar aproximadamente %i Ã¡rvore(s). \n", nickname, qtd_logs_needed);
                 printf("Lucro total: %i moeda(s). \n", total_profit);
         }
         else{
-            printf("Você não possui o nível necessário para cortar este tipo de lenha.");
+            printf("VocÃª nÃ£o possui o nÃ­vel necessÃ¡rio para cortar este tipo de lenha.");
         }
 
     }
     else if (ret9 == 0){
         if (ability_level >= 60){
-                printf("Você receberá ao menos 175xp por lenha. \n");
+                printf("VocÃª receberÃ¡ ao menos 175xp por lenha. \n");
                 int xp_yew = 175;
                 int price_for_sell = 169;
                 int qtd_logs_needed = xp_qnt / xp_yew;
@@ -403,17 +403,17 @@ void ability_wc(){
                     total_profit = 0;
                 }
 
-                printf("%s, você precisará cortar aproximadamente %i árvore(s). \n", nickname, qtd_logs_needed);
+                printf("%s, vocÃª precisarÃ¡ cortar aproximadamente %i Ã¡rvore(s). \n", nickname, qtd_logs_needed);
                 printf("Lucro total: %i moeda(s). \n", total_profit);
         }
         else{
-            printf("Você não possui o nível necessário para cortar este tipo de lenha.");
+            printf("VocÃª nÃ£o possui o nÃ­vel necessÃ¡rio para cortar este tipo de lenha.");
         }
 
     }
     else if (ret10 == 0){
         if (ability_level >= 68){
-                printf("Você receberá ao menos 332.5xp por lenha. \n");
+                printf("VocÃª receberÃ¡ ao menos 332.5xp por lenha. \n");
                 int xp_ivy = 332.5;
                 int qtd_logs_needed = xp_qnt / xp_ivy;
 
@@ -424,17 +424,17 @@ void ability_wc(){
                     qtd_logs_needed = 0;
                 }
 
-                printf("%s, você precisará cortar aproximadamente %i árvore(s). \n", nickname, qtd_logs_needed);
+                printf("%s, vocÃª precisarÃ¡ cortar aproximadamente %i Ã¡rvore(s). \n", nickname, qtd_logs_needed);
         }
         else{
-            printf("Você não possui o nível necessário para cortar este tipo de lenha.");
+            printf("VocÃª nÃ£o possui o nÃ­vel necessÃ¡rio para cortar este tipo de lenha.");
         }
 
     }
 
     else if (ret11 == 0){
         if (ability_level >= 75){
-                printf("Você receberá ao menos 250xp por lenha. \n");
+                printf("VocÃª receberÃ¡ ao menos 250xp por lenha. \n");
                 int xp_magic = 250;
                 int price_for_sell = 613;
                 int qtd_logs_needed = xp_qnt / xp_magic;
@@ -449,17 +449,17 @@ void ability_wc(){
                     total_profit = 0;
                 }
 
-                printf("%s, você precisará cortar aproximadamente %i árvore(s). \n", nickname, qtd_logs_needed);
+                printf("%s, vocÃª precisarÃ¡ cortar aproximadamente %i Ã¡rvore(s). \n", nickname, qtd_logs_needed);
                 printf("Lucro total: %i moeda(s). \n", total_profit);
         }
         else{
-            printf("Você não possui o nível necessário para cortar este tipo de lenha.");
+            printf("VocÃª nÃ£o possui o nÃ­vel necessÃ¡rio para cortar este tipo de lenha.");
         }
 
     }
     else if (ret12 == 0){
         if (ability_level >= 76){
-                printf("Você receberá ao menos 200xp por lenha. \n");
+                printf("VocÃª receberÃ¡ ao menos 200xp por lenha. \n");
                 int xp_blisterwood = 200;
                 int qtd_logs_needed = xp_qnt / xp_blisterwood;
 
@@ -470,16 +470,16 @@ void ability_wc(){
                     qtd_logs_needed = 0;
                 }
 
-                printf("%s, você precisará cortar aproximadamente %i árvore(s). \n", nickname, qtd_logs_needed);
+                printf("%s, vocÃª precisarÃ¡ cortar aproximadamente %i Ã¡rvore(s). \n", nickname, qtd_logs_needed);
         }
         else{
-            printf("Você não possui o nível necessário para cortar este tipo de lenha.");
+            printf("VocÃª nÃ£o possui o nÃ­vel necessÃ¡rio para cortar este tipo de lenha.");
         }
 
     }
     else if (ret13 == 0){
         if (ability_level >= 82){
-                printf("Você receberá ao menos 275xp por lenha. \n");
+                printf("VocÃª receberÃ¡ ao menos 275xp por lenha. \n");
                 int xp_cursed_magic = 275;
                 int price_for_sell = 94;
                 int qtd_logs_needed = xp_qnt / xp_cursed_magic;
@@ -494,17 +494,17 @@ void ability_wc(){
                     total_profit = 0;
                 }
 
-                printf("%s, você precisará cortar aproximadamente %i árvore(s). \n", nickname, qtd_logs_needed);
+                printf("%s, vocÃª precisarÃ¡ cortar aproximadamente %i Ã¡rvore(s). \n", nickname, qtd_logs_needed);
                 printf("Lucro total: %i moeda(s). \n", total_profit);
         }
         else{
-            printf("Você não possui o nível necessário para cortar este tipo de lenha.");
+            printf("VocÃª nÃ£o possui o nÃ­vel necessÃ¡rio para cortar este tipo de lenha.");
         }
 
     }
     else if (ret14 == 0){
         if (ability_level >= 83){
-                printf("Você receberá ao menos 140xp por lenha. \n");
+                printf("VocÃª receberÃ¡ ao menos 140xp por lenha. \n");
                 int xp_mutated_vine = 140;
                 int qtd_logs_needed = xp_qnt / xp_mutated_vine;
 
@@ -515,16 +515,16 @@ void ability_wc(){
                     qtd_logs_needed = 0;
                 }
 
-                printf("%s, você precisará cortar aproximadamente %i árvore(s). \n", nickname, qtd_logs_needed);
+                printf("%s, vocÃª precisarÃ¡ cortar aproximadamente %i Ã¡rvore(s). \n", nickname, qtd_logs_needed);
         }
         else{
-            printf("Você não possui o nível necessário para cortar este tipo de lenha.");
+            printf("VocÃª nÃ£o possui o nÃ­vel necessÃ¡rio para cortar este tipo de lenha.");
         }
 
     }
     else if (ret15 == 0){
         if (ability_level >= 83){
-                printf("Você receberá ao menos 161.6xp por lenha. \n");
+                printf("VocÃª receberÃ¡ ao menos 161.6xp por lenha. \n");
                 int xp_curly_straight_root = 161.6;
                 int qtd_logs_needed = xp_qnt / xp_curly_straight_root;
 
@@ -535,16 +535,16 @@ void ability_wc(){
                     qtd_logs_needed = 0;
                 }
 
-                printf("%s, você precisará cortar aproximadamente %i árvore(s). \n", nickname, qtd_logs_needed);
+                printf("%s, vocÃª precisarÃ¡ cortar aproximadamente %i Ã¡rvore(s). \n", nickname, qtd_logs_needed);
         }
         else{
-            printf("Você não possui o nível necessário para cortar este tipo de lenha.");
+            printf("VocÃª nÃ£o possui o nÃ­vel necessÃ¡rio para cortar este tipo de lenha.");
         }
 
     }
     else if (ret16 == 0){
         if (ability_level >= 90){
-                printf("Você receberá ao menos 325xp por lenha. \n");
+                printf("VocÃª receberÃ¡ ao menos 325xp por lenha. \n");
                 int xp_ancient = 325;
                 int price_for_sell = 4896;
                 int qtd_logs_needed = xp_qnt / xp_ancient;
@@ -559,17 +559,17 @@ void ability_wc(){
                     total_profit = 0;
                 }
 
-                printf("%s, você precisará cortar aproximadamente %i árvore(s). \n", nickname, qtd_logs_needed);
+                printf("%s, vocÃª precisarÃ¡ cortar aproximadamente %i Ã¡rvore(s). \n", nickname, qtd_logs_needed);
                 printf("Lucro total: %i moeda(s). \n", total_profit);
         }
         else{
-            printf("Você não possui o nível necessário para cortar este tipo de lenha.");
+            printf("VocÃª nÃ£o possui o nÃ­vel necessÃ¡rio para cortar este tipo de lenha.");
         }
 
     }
     else if (ret17 == 0){
         if (ability_level >= 94){
-                printf("Você receberá ao menos 434.5xp por lenha. \n");
+                printf("VocÃª receberÃ¡ ao menos 434.5xp por lenha. \n");
                 int xp_crystal = 434.5;
                 int qtd_logs_needed = xp_qnt / xp_crystal;
 
@@ -580,16 +580,16 @@ void ability_wc(){
                     qtd_logs_needed = 0;
                 }
 
-                printf("%s, você precisará cortar aproximadamente %i árvore(s). \n", nickname, qtd_logs_needed);
+                printf("%s, vocÃª precisarÃ¡ cortar aproximadamente %i Ã¡rvore(s). \n", nickname, qtd_logs_needed);
         }
         else{
-            printf("Você não possui o nível necessário para cortar este tipo de lenha.");
+            printf("VocÃª nÃ£o possui o nÃ­vel necessÃ¡rio para cortar este tipo de lenha.");
         }
 
 
     }
     else{
-        printf("O tipo de lenha informado é inválido. Lembre-se de digitar sem acentos!\n");
+        printf("O tipo de lenha informado Ã© invÃ¡lido. Lembre-se de digitar sem acentos!\n");
     }
 
 }
