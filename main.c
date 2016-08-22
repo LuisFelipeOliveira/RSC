@@ -29,23 +29,8 @@ char *type_crystal[7];
 int ability;
 int ability_level;
 float xp_qnt;
-int ret1;
-int ret2;
-int ret3;
-int ret4;
-int ret5;
-int ret6;
-int ret7;
-int ret8;
-int ret9;
-int ret10;
-int ret11;
-int ret12;
-int ret13;
-int ret14;
-int ret15;
-int ret16;
-int ret17;
+int ret1, ret2, ret3, ret4, ret5, ret6, ret7, ret8, ret9;
+int ret10, ret11, ret12, ret13, ret14, ret15, ret16, ret17;
 
 
 
@@ -57,8 +42,8 @@ void receive_nickname(); //OK
 void receive_ability_name(); //30%
 void receive_ability_level();// OK
 void check_level();// OK
-void check_quantity_of_exp();
-void ability_wc();
+void check_quantity_of_exp(); // OK
+void ability_wc(); // OK
 
 
 
